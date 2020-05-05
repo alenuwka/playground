@@ -16,13 +16,23 @@
     
     <script>
         var numberArray = [];
+        var evenOdd = {even: [], odd: []};
 
          function addNumber() {
             numberArray.push(document.getElementById('textInput').value);
              //console.log(numberArray);
          };
          function splitNumbers() {
-                
+               numberArray.forEach(function(number){
+                   if(number % 2 === 0){
+                       evenOdd.even.push(number);
+                   }else{
+                    evenOdd.odd.push(number);
+                   };
+               });
+            document.getElementById('display').innerHTML = "Even numbers: " + evenOdd.even + "<br>"+ "Odd numbers: " + evenOdd.odd;
+               //console.log(evenOdd.even); 
+               //console.log(evenOdd.odd);
              
          };
 
